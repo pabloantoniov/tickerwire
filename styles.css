@@ -1,0 +1,159 @@
+:root {
+  color-scheme: dark;
+  --bg: #0b0f10;
+  --panel: #11181b;
+  --muted: #7d8f98;
+  --text: #e5eff5;
+  --accent: #f0c75e;
+  --accent-2: #48d1c6;
+  --border: #1b2a2f;
+  --positive: #33d17a;
+  --negative: #ff6b6b;
+  font-family: "IBM Plex Mono", "Menlo", "Consolas", monospace;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background: radial-gradient(circle at top left, #0f1517 0%, #0b0f10 55%);
+  color: var(--text);
+  padding: 28px;
+}
+
+.app-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 1px solid var(--border);
+  padding-bottom: 16px;
+  margin-bottom: 18px;
+}
+
+.app-header h1 {
+  font-size: 22px;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  color: var(--accent);
+}
+
+.subtitle {
+  color: var(--muted);
+  font-size: 12px;
+  margin-top: 4px;
+}
+
+.clock {
+  font-size: 12px;
+  color: var(--accent-2);
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.watchlist {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 12px;
+  margin-bottom: 20px;
+}
+
+.watch-card {
+  background: var(--panel);
+  border: 1px solid var(--border);
+  padding: 12px;
+  border-radius: 4px;
+}
+
+.watch-card h2 {
+  font-size: 16px;
+  color: var(--accent);
+  margin-bottom: 8px;
+}
+
+.watch-card p {
+  font-size: 11px;
+  color: var(--muted);
+  margin-bottom: 10px;
+}
+
+.watch-meta {
+  display: flex;
+  justify-content: space-between;
+  font-size: 11px;
+  letter-spacing: 0.4px;
+}
+
+.change.positive {
+  color: var(--positive);
+}
+
+.change.negative {
+  color: var(--negative);
+}
+
+.feed {
+  display: grid;
+  gap: 10px;
+}
+
+.feed-item {
+  display: grid;
+  grid-template-columns: 90px 1fr 120px;
+  gap: 12px;
+  align-items: center;
+  padding: 10px 12px;
+  background: rgba(16, 22, 24, 0.9);
+  border: 1px solid var(--border);
+  border-left: 2px solid var(--accent);
+  border-radius: 3px;
+}
+
+.feed-item time {
+  font-size: 10px;
+  color: var(--muted);
+}
+
+.feed-item h3 {
+  font-size: 13px;
+  font-weight: 500;
+  margin-bottom: 4px;
+}
+
+.feed-item p {
+  font-size: 11px;
+  color: var(--muted);
+}
+
+.feed-item a {
+  color: var(--text);
+  text-decoration: none;
+}
+
+.feed-item a:hover {
+  color: var(--accent-2);
+}
+
+.feed-source {
+  text-align: right;
+  font-size: 11px;
+  color: var(--accent);
+  text-transform: uppercase;
+  letter-spacing: 0.6px;
+}
+
+@media (max-width: 720px) {
+  body {
+    padding: 20px;
+  }
+
+  .feed-item {
+    grid-template-columns: 1fr;
+  }
+
+  .feed-source {
+    text-align: left;
+  }
+}
